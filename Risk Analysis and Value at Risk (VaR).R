@@ -6,8 +6,8 @@ library(scales)
 
 # Step 1: Data Collection
 # Set the stock symbol and date range
-symbol <- "BAC"
-start_date <- "2023-01-01"
+symbol <- "Enter Stock Ticker Here"
+start_date <- "Enter Start Date Here"
 end_date <- Sys.Date()
 
 getSymbols(symbol, src = "yahoo", from = start_date, to = end_date)
@@ -66,7 +66,7 @@ ggplot(vaR_data, aes(x = Method, y = VaR, fill = Method)) +
   theme(plot.title = element_text(hjust = 0.5))
 
 # 4.3 Backtesting Results
-# Backtesting done on 100 trading days backtesting should not exceed 5
+# Backtesting done on 100 trading days backtesting should not exceed 5%
 backtest_data <- data.frame(
   Method = c("Historical VaR", "Parametric VaR"),
   Exceptions = c(exceptions_historical, exceptions_parametric)
